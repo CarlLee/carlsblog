@@ -1,0 +1,6 @@
+<ul>
+{% for post in posts %}
+	<li>
+	<p><a href='/posts/{{forloop.counter}}'><h3>{{post.title}}</h3></a>{{post.published}}</p>
+	</li>
+{% endfor %}
