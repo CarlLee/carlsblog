@@ -1,15 +1,20 @@
-<script type="text/javascript" src="/static/posts/js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="/static/posts/js/xheditor-1.1.7-en.min.js"></script>
-<form action="/posts/publish" method="post">
-	{% csrf_token %}
-	<div>
-		{{form.title.errors}}
-		<label for="id_title">
-			Title
-		</label>
-		{{form.title}}
-	</div>
-	<textarea  class="xheditor {skin:'nostyle'}" id="editor" style="width: 700px; height: 300px;" name="content">
-	</textarea>
-	<input style="display: block" type="submit">
-</form>
+{% extends "index.html" %}
+{% block scripts_css %}
+	<script type="text/javascript" src="/static/posts/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/static/posts/js/xheditor-1.1.7-en.min.js"></script>
+{% endblock scripts_css %}
+{% block content %}
+	<form action="/posts/publish" method="post">
+		{% csrf_token %}
+		<div>
+			{{form.title.errors}}
+			<label for="id_title">
+				Title
+			</label>
+			{{form.title}}
+		</div>
+		<textarea  class="xheditor {skin:'nostyle'}" id="editor" style="width: 700px; height: 300px;" name="content">
+		</textarea>
+		<input style="display: block" type="submit">
+	</form>
+{% endblock content %}
