@@ -4,7 +4,7 @@ from posts.models import Post
 from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404
 
-def index(request):
+def post_list(request):
     posts = get_list_or_404(Post)
     for post in posts:
         post.digest = post.content[:200]
@@ -13,7 +13,7 @@ def index(request):
     })
     return render_to_response('index.html', ctx)
 
-def show_post(request, post_id):
+def post_detail(request, post_id):
     post = get_object_or_404(Post, pk = post_id)
     ctx = RequestContext(request, {'post': post})
     return render_to_response('index.html', ctx)

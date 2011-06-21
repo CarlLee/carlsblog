@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('carlsblog.posts.views',
-    url(r'^$', 'index'),
-    url(r'^(?P<post_id>\d+)/$', 'show_post'),
+    url(r'^$', 'post_list'),
+    url(r'^(?P<post_id>\d+)/$', 'post_detail'),
 )
