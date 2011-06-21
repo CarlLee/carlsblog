@@ -1,5 +1,10 @@
-<div class="contentTitle"><h1>{{post.title}}</h1></div>
+{% extends "index.html" %}
+{% block content %}
+<div class="contentTitle">
+	<h1>{{post.title}}</h1>
+</div>
 <div class="contentText">
 	{{post.content|safe}}
   <p><a href="/posts/">&lt;&lt; (go back)</a></p>
 </div>
+{% endblock %}

@@ -16,6 +16,7 @@
             
       </div>
         <div id="bar">
+        	{% block bar %}
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Pictures</a></li>
@@ -24,7 +25,9 @@
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-      </div>
+        	{% endblock bar%}
+     	 </div>
+      {% block content %}
       {% if posts %}
       	{% include 'post_list.html'%}
       {% else %}
@@ -32,7 +35,8 @@
       		{% include 'post_detail.html' %}
       	{% endif %}
       {% endif %}
-        <div id="footer"><a href="http://www.bryantsmith.com"><span>This template is designed by </span> bryant smith</a> </div>
+      {% endblock content %}
+        <div id="footer"><a href="http://www.bryantsmith.com"><span>Template by </span> bryant smith</a> </div>
     </div>
 </body>
 </html>
