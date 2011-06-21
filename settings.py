@@ -145,3 +145,10 @@ LOGGING = {
         },
     }
 }
+
+BLOG_TITLE = 'Carl\'s blog'
+BLOG_SLOGAN = 'This is written in Django...'
+BLOG_HOMEPAGE = {
+    'posts_per_page': 20,
+    'posts_digest_lines': 2,
+}

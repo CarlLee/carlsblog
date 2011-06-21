@@ -1,7 +1,7 @@
 {% for post in posts %}
     <div class="contentTitle"><h1>{{post.title}}</h1></div>
     <div class="contentText">
-    	{{post.digest}}
+    	{{post.digest|safe}}
       <p><a href="/posts/{{post.id}}">&gt;&gt; (read more)</a></p>
     </div>
 {% endfor %}
