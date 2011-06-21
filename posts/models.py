@@ -9,4 +9,4 @@ class Post(models.Model):
     content = models.TextField()
     title = models.CharField(max_length = 50, null = True)
     def __unicode__(self):
-        return self.content
+        return self.title
