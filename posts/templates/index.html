@@ -1,6 +1,37 @@
-<ul>
-{% for post in posts %}
-	<li>
-	<p><a href='/posts/{{forloop.counter}}'><h3>{{post.title}}</h3></a>{{post.published}}</p>
-	</li>
-{% endfor %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/static/posts/style.css" />
+
+<title>Reverted by Bryant Smith</title>
+</head>
+
+<body>
+    <div id="page">
+		
+        <div id="header">
+        	<h1>Reverted »</h1>
+            <h2>The first XHTML 1.1 Validated Template by Bryant Smith.</h2>
+            
+      </div>
+        <div id="bar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pictures</a></li>
+                <li><a href="#">My Bio</a></li>
+                <li><a href="#">My Company</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+      </div>
+      {% if posts %}
+      	{% include 'post_list.html'%}
+      {% else %}
+      	{% if post %}
+      		{% include 'post_detail.html' %}
+      	{% endif %}
+      {% endif %}
+        <div id="footer"><a href="http://www.bryantsmith.com"><span>This template is designed by </span> bryant smith</a> </div>
+</body>
+</html>
