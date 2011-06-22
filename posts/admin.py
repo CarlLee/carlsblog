@@ -13,7 +13,10 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'published'
     change_form_template = 'change_form.html'
     formfield_overrides = {
-        models.TextField: {'widget': Textarea(attrs={'class':'xheditor {skin:\'nostyle\'}'})},
+        models.TextField: {'widget': Textarea(attrs={
+                                                     'class':'xheditor {skin:\'nostyle\'}',
+                                                     'style':'width: 100%; height: 450px',
+                                                })},
     }
     
 admin.site.register(Post, PostAdmin)
